@@ -11,7 +11,7 @@ export class MainScreen extends Scene {
   boot() {
     this.e.sceneManager.addScene(this);
     this.e.sceneManager.setDefaultScene(this);
-    
+
   }
 
   onActivate() {

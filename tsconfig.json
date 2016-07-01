@@ -1,10 +1,10 @@
 {
-    "compilerOptions": {
-        "module": "es2015",
-        "moduleResolution": "node",
-        "target": "es6",
-        "outDir": "build",
-        "noImplicitAny" : true,
-        "jsx": "react"
-    }
+  "compilerOptions": {
+    "module": "es2015",
+    "moduleResolution": "node",
+    "target": "es6",
+    "outDir": "build",
+    "noImplicitAny" : true,
+    "jsx": "react"
+  }
 }
