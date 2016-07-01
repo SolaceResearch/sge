@@ -1,10 +1,12 @@
-import {EventEmitter, UI, UIFrameManager, KVS} from "./lib/index.ts";
+import {EventEmitter, UI, UIFrameManager, KVS, KeyValueStore, Scene, SceneManager} from "./lib/index.ts";
 
 export class Engine extends EventEmitter {
     ui: UI;
     uiFrameManager: UIFrameManager = new UIFrameManager(this.ui);
     lastLocation: Location;
-    kvs: KVS = new KVS();
+    kvs: KeyValueStore = new KVS();
+    scene: Scene;
+    sceneManager: SceneManager = new SceneManager();
     
     constructor() {
         super();
@@ -13,16 +15,40 @@ export class Engine extends EventEmitter {
     
     boot() : Engine {
         this.emit("boot", this);
+        this.setScene(this.sceneManager.getDefaultScene());
         return this;
     }
     
     save(slot: number) {
-        window.localStorage.setItem("SOLACE_SLOT_" + slot.toString(), this.kvs.save());
+      this.kvs.set("CURRENT_SCENE", this.scene.saveName);
+      this.scene.onSave();
+      window.localStorage.setItem("SOLACE_SLOT_" + slot.toString(), this.kvs.save());
     }
     
     load(slot: number) {
-        // todo check if slot is occupied
         this.kvs.restore(window.localStorage.getItem("SOLACE_SLOT_" + slot.toString()));
+        this.setScene(
+          this.sceneManager.getScene(this.kvs.get("CURRENT_SCENE")),
+          true        
+        );
+    }
+
+    setScene(scene: Scene, load?: boolean) {
+      if (this.scene && !load)
+        this.scene.onSwitchAway();
+      this.scene = scene;
+      
+      if (load) {
+        this.scene.onLoad();
+      } else {
+        this.scene.onActivate();
+      }
+      this.cycle();
+    }
+
+    cycle() {
+      this.ui.reset();
+      this.scene.onRender();
     }
 }
 

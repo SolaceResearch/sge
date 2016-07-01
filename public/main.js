@@ -4,6 +4,7 @@ import * as game from "solace-game";
     
 browser.SRITest().then(() => {
     let engine = core.default;
+    console.dir(engine);
     new game.MainScreen(engine);
     browser.StartUI(engine);
 }).catch((e) => {

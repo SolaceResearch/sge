@@ -12,17 +12,13 @@ export class KVS extends EventEmitter implements KeyValueStore {
     private kvs: Map<string, any> = new Map<string, any>();
     
     save() : string {
-        let retval: any = {};
-        for (let [k,v] of this.kvs) {
-            retval[k] = v;
-        }
-        return JSON.stringify(retval);
+      return JSON.stringify(Array.from(this.kvs.entries()));
     }
     
     restore(data: string) : void {
         var json = JSON.parse(data);
-        for (let k of Object.keys(json)) {
-            this.kvs.set(k, json[k]);
+        for (let k of (json)) {
+            this.kvs.set(k[0], k[1]);
         }
     }
     

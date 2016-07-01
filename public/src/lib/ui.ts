@@ -82,8 +82,9 @@ export class TextPipeline {
     append(text: string) {
         if (this.segments.length < 1) {
             this.write(text);
+        } else {
+        	this.segments[this.segments.length - 1] = this.segments[this.segments.length - 1] + TextPipeline.SEP + text;
         }
-        this.segments[this.segments.length - 1] = this.segments[this.segments.length - 1] + TextPipeline.SEP + text;
         this.engine.emit("text", this.get());
     }
     

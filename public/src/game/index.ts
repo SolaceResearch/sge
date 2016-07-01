@@ -1,13 +1,48 @@
 import {Engine} from "../core.ts";
+import {Scene} from "../lib/index.ts";
 
-export class MainScreen {
-    constructor(private engine: Engine) {
-        engine.on("boot", this.boot.bind(this));
-    }
-    boot() {
-        this.engine.ui.text.write("Hello, World");
-        this.engine.ui.actionButtons.add({label: "Start the game", cb: () => {console.log("start the game now")}});
-        this.engine.ui.actionButtons.add({label: "Save Game", cb: () => this.engine.save(1)});
-        this.engine.ui.actionButtons.add({label: "Load Game", cb: () => this.engine.load(1)});
-    }
+export class MainScreen extends Scene {
+  i:number;
+  constructor(engine: Engine) {
+    super(engine);
+    engine.on("boot", this.boot.bind(this));
+  }
+
+  boot() {
+    this.e.sceneManager.addScene(this);
+    this.e.sceneManager.setDefaultScene(this);
+    
+  }
+
+  onActivate() {
+    this.i = this.getLocalStore().get("incrementor") || 0;
+  }
+
+  onLoad() {
+    this.i = this.getLocalStore().get("incrementor") || 0;
+  }
+
+  onRender() {
+    let self = this;
+    this.e.ui.text.append("Hello World, we're on iteration " + this.i);
+    this.e.ui.actionButtons.add({
+      label: "Increment me!",
+      cb: () => {
+        self.i++;
+        self.e.cycle();
+      }
+    })
+  }
+
+  onSave() {
+    this.persist();
+  }
+
+  onSwitchAway() {
+    this.persist();
+  }
+
+  persist() {
+    this.getLocalStore().set("incrementor", this.i);
+  }
 }
