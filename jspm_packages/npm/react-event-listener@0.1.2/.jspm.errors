@@ -1,0 +1,58 @@
+MultipleErrors: /home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:2:1: Unexpected reserved word import
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:2:8: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:2:14: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:2:19: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:3:1: Unexpected reserved word import
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:3:8: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:3:23: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:4:1: Unexpected reserved word import
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:4:8: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:4:22: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:5:1: Unexpected reserved word import
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:5:8: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:5:22: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:5:27: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:11:9: Unexpected token <
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:11:10: Unexpected token EventListener
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:11:25: Unexpected token >
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:12:7: Unexpected token )
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:20:9: Unexpected token <
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:20:10: Unexpected token EventListener
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:21:11: Unexpected token <
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:21:12: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:21:22: Unexpected token 'Foo'
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:21:23: Unexpected token <
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:22:9: Unexpected token <
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.spec.js:23:7: Unexpected token )
+
+MultipleErrors: /home/gant/.jspm/packages/npm/react-event-listener@0.1.2/test/unit.js:1:21: Unexpected reserved word import
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/test/unit.js:1:28: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/test/unit.js:1:37: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/test/unit.js:1:42: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/test/unit.js:2:1: Unexpected reserved word import
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/test/unit.js:2:8: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/test/unit.js:2:14: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/test/unit.js:2:19: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/test/unit.js:3:1: Unexpected reserved word import
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/test/unit.js:3:8: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/test/unit.js:3:13: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/test/unit.js:3:18: Semi-colon expected
+
+MultipleErrors: /home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:1:1: Unexpected reserved word import
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:1:8: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:1:36: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:24:8: Unexpected token other
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:24:13: Unexpected token ,
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:36:1: Unexpected reserved word export
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:36:8: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:36:8: Unexpected reserved word default
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:36:16: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:37:20: Unexpected token =
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:41:24: Unexpected token .
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:41:25: Unexpected token node
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:41:29: Unexpected token ,
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:46:3: Unexpected token }
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:48:23: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:54:26: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:60:12: Semi-colon expected
+/home/gant/.jspm/packages/npm/react-event-listener@0.1.2/src/index.js:64:1: Unexpected token End of File

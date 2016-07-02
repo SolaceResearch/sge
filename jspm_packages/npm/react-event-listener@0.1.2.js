@@ -1,0 +1,1 @@
+module.exports = require("npm:react-event-listener@0.1.2/lib/index.js");
