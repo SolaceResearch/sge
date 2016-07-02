@@ -21,28 +21,26 @@ export class Engine extends EventEmitter {
 
   save(slot: number) {
     this.kvs.set("CURRENT_SCENE", this.scene.saveName);
-    this.scene.onSave();
+    this.scene.onDeactivate();
     window.localStorage.setItem("SOLACE_SLOT_" + slot.toString(), this.kvs.save());
   }
 
   load(slot: number) {
+    this.scene = null;
     this.kvs.restore(window.localStorage.getItem("SOLACE_SLOT_" + slot.toString()));
+    let targetScene = this.sceneManager.getScene(this.kvs.get("CURRENT_SCENE"));
     this.setScene(
-      this.sceneManager.getScene(this.kvs.get("CURRENT_SCENE")),
-      true
+      this.sceneManager.getScene(this.kvs.get("CURRENT_SCENE"))
     );
   }
 
-  setScene(scene: Scene, load?: boolean) {
-    if (this.scene && !load)
-    this.scene.onSwitchAway();
+  setScene(scene: Scene) {
+    if (this.scene)
+      this.scene.onDeactivate();
     this.scene = scene;
 
-    if (load) {
-    this.scene.onLoad();
-    } else {
     this.scene.onActivate();
-    }
+
     this.cycle();
   }
 

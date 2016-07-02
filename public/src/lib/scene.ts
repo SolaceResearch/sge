@@ -40,11 +40,6 @@ export abstract class Scene {
 
   }
 
-  // Ran when the scene is activated through loading a savegame
-  onLoad() {
-
-  }
-
   // Here's the place to render stuff
   onRender() {
 
@@ -52,13 +47,7 @@ export abstract class Scene {
 
   // When the Engine receives a signal to switch away from here
   // persist to kvs here
-  onSwitchAway() {
-
-  }
-
-  // When the Engine receives a signal to save
-  // persist to kvs here
-  onSave() {
+  onDeactivate() {
 
   }
 

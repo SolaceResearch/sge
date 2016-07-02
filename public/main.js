@@ -6,6 +6,7 @@ browser.SRITest().then(() => {
   let engine = core.default;
   console.dir(engine);
   new game.MainScreen(engine);
+  new game.SubScene(engine);
   browser.StartUI(engine);
 }).catch((e) => {
   let css = "color:#bada55;background-color:#222;padding: 3px; line-height: 1.4;";

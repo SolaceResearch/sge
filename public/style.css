@@ -12,9 +12,8 @@ body {
 .content {
   transition: .2s ease-in;
   padding: 12px;
-}
-
-.content.menu {
-  margin-left: 260px;
-  transition: .2s ease-out;
+  max-width:960px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.6;
 }
