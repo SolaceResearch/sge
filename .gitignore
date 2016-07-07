@@ -1,3 +1,5 @@
 node_modules
 typings
+build
+public/release.json
 public/jspm_packages

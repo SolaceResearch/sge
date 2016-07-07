@@ -2,11 +2,11 @@ import {EventEmitter, UI, UIFrameManager, KVS, KeyValueStore, Scene, SceneManage
 
 export class Engine extends EventEmitter {
   ui: UI;
-  uiFrameManager: UIFrameManager = new UIFrameManager(this.ui);
   lastLocation: Location;
   kvs: KeyValueStore = new KVS();
   scene: Scene;
   sceneManager: SceneManager = new SceneManager();
+  buildInfo: any;
 
   constructor() {
     super();

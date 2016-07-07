@@ -4,6 +4,7 @@ import {Scene} from "../lib/index.ts";
 export class MainScreen extends Scene {
 
   i:number;
+  subScreen: number;
 
   constructor(engine: Engine) {
     super(engine);
@@ -17,6 +18,7 @@ export class MainScreen extends Scene {
 
   onActivate() {
     this.i = this.getLocalStore().get("incrementor") || 0;
+    this.subScreen = 0;
   }
 
   onDeactivate() {
@@ -24,6 +26,15 @@ export class MainScreen extends Scene {
   }
 
   onRender() {
+    if (this.subScreen == 0) {
+      this.mainScreen();
+    }
+    if (this.subScreen == 1) {
+      this.loadGameScreen();
+    }
+  }
+
+  mainScreen() {
     let self = this;
     this.e.ui.text.write("Hello World, we're on iteration " + this.i);
     this.e.ui.text.write("Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Er lag auf seinem panzerartig harten Rücken und sah, wenn er den Kopf ein wenig hob, seinen gewölbten, braunen, von bogenförmigen Versteifungen geteilten Bauch, auf dessen Höhe sich die Bettdecke, zum gänzlichen Niedergleiten bereit, kaum noch erhalten konnte. Seine vielen, im Vergleich zu seinem sonstigen Umfang kläglich dünnen Beine flimmerten ihm hilflos vor den Augen.")
@@ -41,6 +52,25 @@ export class MainScreen extends Scene {
         self.e.setScene(
           self.e.sceneManager.getScene("SubSCENE")
         )
+      }
+    })
+    this.e.ui.actionButtons.add({
+      label: "Load Game",
+      cb: () => {
+        self.subScreen = 1;
+        self.e.cycle();
+      }
+    })
+  }
+
+  loadGameScreen() {
+    let self = this;
+    this.e.ui.text.write("Load the game.");
+    this.e.ui.actionButtons.add({
+      label: "Back",
+      cb: () => {
+        self.subScreen = 0;
+        self.e.cycle();
       }
     })
   }

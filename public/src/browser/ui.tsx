@@ -4,6 +4,7 @@ import {Engine} from '../core.ts';
 import {Button} from '../lib/ui.ts';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import {Credits} from "./credits.tsx";
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -12,6 +13,7 @@ import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import {solaceTheme} from './muiTheme.ts';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -25,9 +27,12 @@ interface ActionButtonsProperties {
   buttons: Button[];
 }
 
-let UIWrapper = React.createClass<{}, {}>({
+interface CreditsProperties {
+  open: boolean;
+}
+
+let UIWrapper: any = React.createClass<{}, {}>({
   getInitialState: function() {
-    console.dir(this.props);
     return {};
   },
 
@@ -45,7 +50,8 @@ export class UI extends React.Component<{},any> {
     this.state = {
       text: engine.ui.text.get(),
       actionButtons: engine.ui.actionButtons.buttons,
-      open: false
+      open: false,
+      creditsOpen: false
     };
   }
 
@@ -61,33 +67,35 @@ export class UI extends React.Component<{},any> {
     engine.boot();
   };
 
-  handleToggle() { this.setState({open: !(this.state.open)}); }
+  handleToggle() {
+    this.setState({open: !(this.state.open)});
+  }
+
+  openCredits() {
+    this.setState({creditsOpen: true, creditsOpenCallback: function() {
+      this.setState({creditsOpen: false});
+    }.bind(this)});
+  }
 
   render() {
     return <div>
-      <AppBar title="Solace" onLeftIconButtonTouchTap={this.handleToggle.bind(this)} />
+      <AppBar title="Solace" style={{position: "fixed"}} onLeftIconButtonTouchTap={this.handleToggle.bind(this)} />
       <Drawer open={this.state.open}>
         <AppBar title="Menu" onLeftIconButtonTouchTap={this.handleToggle.bind(this)} />
-        <MenuItem>Menu Item</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
+        <MenuItem onClick={this.openCredits.bind(this)}>Credits</MenuItem>
       </Drawer>
-      <div className={"content" + (this.state.open ? ' menu' : '')}>
-        <Card>
-          <TextBox text={this.state.text} />
-          <ActionButtons buttons={this.state.actionButtons} />
-        </Card>
-        <Credits />
+      <div>
+        <div className={"content" + (this.state.open ? ' menu' : '')} style={{paddingTop: "76px"}}>
+          <Card>
+            <CardTitle title="Solace" subtitle="Main Menu" />
+            <TextBox text={this.state.text} />
+            <ActionButtons buttons={this.state.actionButtons} />
+          </Card>
+        </div>
       </div>
+      <Credits open={this.state.creditsOpen} e={e} callback={this.state.creditsOpenCallback} />
     </div>
   };
-}
-
-export class Credits extends React.Component<{}, {}> {
-  render() {
-    return <Card>
-      <CardText>Powered By React {React.version}</CardText>
-    </Card>
-  }
 }
 
 export class ActionButtons extends React.Component<ActionButtonsProperties, {}> {

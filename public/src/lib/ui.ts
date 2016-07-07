@@ -106,20 +106,3 @@ export class TextPipeline {
   static NL = "<br>";
   static SEP = " ";
 }
-
-export interface UIFrame {
-  text: string[],
-  actionButtons: Button[]
-}
-
-export class UIFrameManager {
-  constructor(private ui: UI) {}
-  frames: UIFrame[] = [];
-  push() {
-    this.frames.push(this.ui.save());
-    this.ui.reset();
-  }
-  pop() {
-    this.ui.restore(this.frames.pop());
-  }
-}

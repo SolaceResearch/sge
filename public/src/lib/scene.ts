@@ -84,6 +84,8 @@ export abstract class Scene {
       .getScopedInstance(this.saveName);
   }
 
+  public visibleSceneName = "Menu Screen";
+
   // How the engine loads a scene from a save
   public saveName: string = "GENERIC_SCENE";
   protected e: Engine;

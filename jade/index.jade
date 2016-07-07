@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title Solace
+  body
+    #ui
+    - if (prod)
+      script(src="sge.js")
+    - else
+      script(src="jspm_packages/system.js")
+      script(src="config.js")
+      script.
+        System.import("./main");
