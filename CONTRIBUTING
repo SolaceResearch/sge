@@ -1,0 +1,35 @@
+
+   SOLACE RESEARCH GROUP
+
+   CODE CONTRIBUTION TERMS
+
+1. By submitting code to any Solace Research Project, you automatically 
+   grant the original author a non-exclusive, perpetual unrestricted
+   (except for the restrictions outlined in this document) license to 
+   use and sublicense your contributions for any purpose.
+
+2. Any code submitted is also automatically licensed under the terms
+   specified in the LICENSE file of the project you have contributed to.
+
+3. Should a projects license be changed by the original author, the
+   previously submitted code will remain under the license that was in
+   place when you made your submission. Your code may still be relicensed
+   under the terms in (1). Attribution via the git commit log (or other
+   means if those mentioned are not available) will be retained under any
+   circumstances.
+
+4. You agree to only submit code via git. If for any reason you can not
+   use mechanisms of the current code hosting platform this project uses,
+   a git shell may be provided for you to push your changes to ensure
+   attribution via git commits remains consistent. Code submissions
+   without git can not be accepted at this time.
+
+5. Please state in your code submission that you agree to the terms of
+   this document, alongside the Git commit hash for the version you are 
+   agreeing to. You agree that the LICENSE file for that commit applies
+   to these terms.
+
+6. The original author is identified by being able to sign with the 
+   following PGP Key:
+   
+     0xE6F04D4001099975 (Solace Research Group Signing Key)
